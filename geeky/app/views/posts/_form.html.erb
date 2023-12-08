@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :writer_id, style: "display: block" %>
-    <%= form.select :writer_id, Writer.all.map { |writer| [writer.name, writer.id] } %>
+    <%= form.select :writer_id, Writer.select_lists %>
   </div>
 
   <div>
