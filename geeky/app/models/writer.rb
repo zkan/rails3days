@@ -1,5 +1,8 @@
 class Writer < ApplicationRecord
-  has_many :posts
+  # has_many :posts
+
+  # เป็นการที่เราลบ writer แล้ว ให้ลบ post ทิ้งให้หมดด้วย
+  has_many :posts, dependent: :destroy
 
   # Below is a class method -> Writer.count
   # def self.select_lists
