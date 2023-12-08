@@ -23,7 +23,7 @@ class WriterTest < ActiveSupport::TestCase
   end
 
   def test_select_lists
-    list = [[@john.name, @john.id], [@kan.name, @kan.id]].sort_by {|name, id| id}
+    list = [[@john.name, @john.id], [@kan.name, @kan.id]].sort_by { |name, id| id }
     assert_equal Writer.select_lists, list
   end
 end
