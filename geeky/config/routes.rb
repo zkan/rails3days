@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # RESTful: list, show, new, edit, create, update, delete
+  # RESTful: list (index), show, new, edit, create, update, delete
   resources :posts
+
+  # ถ้าต้องการให้แสดงแค่ index กับ show
+  # resources :posts, only: [:index, :show]
 end
