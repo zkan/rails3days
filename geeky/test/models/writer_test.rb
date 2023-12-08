@@ -26,4 +26,10 @@ class WriterTest < ActiveSupport::TestCase
     list = [[@john.name, @john.id], [@kan.name, @kan.id]].sort_by { |name, id| id }
     assert_equal Writer.select_lists, list
   end
+
+  def test_unique_name
+    writer = Writer.new(name: "John", age: 21)
+
+    assert_equal writer.valid?, false
+  end
 end

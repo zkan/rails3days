@@ -21,4 +21,6 @@ class Writer < ApplicationRecord
   # Below is an instance method -> writer.display_name
   def display_name
   end
+
+  validates :name, uniqueness: true
 end
