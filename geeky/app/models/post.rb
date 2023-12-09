@@ -17,8 +17,14 @@ class Post < ApplicationRecord
 
   # attr_accessor :tags_string -- เราจะไม่ใช้วิธีนี้ เพราะว่าเราต้องเอา string มา split ก่อน
   def tags_string=(value)
+    tags.destroy_all
+
     words = value.split(",")
                  .map { |s| s.strip.downcase }
+
+    # Prevent saving duplicates in the join table
+    # existing_tags = tags.pluck(:name)
+    # words = words - existing_tags
 
     words.each do |word|
       tag = Tag.find_or_create_by(name: word)
