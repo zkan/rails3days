@@ -5,6 +5,11 @@
 <%= link_to "New post", new_post_path %>
 <%= paginate @posts, views_prefix: :posts  %>
 
+<%= form_with url: "/posts", method: :get do |form| %>
+  <%= form.text_field :q %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <div id="posts">
   <table>
     <thead>

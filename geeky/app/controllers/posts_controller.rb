@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     # ทำให้ ORM ไม่ต้อง query 2 รอบ เราสามารถ optimize query ได้โดยใช้ eager load
     # ซึ่งก็จะ join มาให้เราแต่แรก
     @posts = Post.eager_load(:writer, :tags)
+                 .where("title LIKE '%#{params[:q]}%'")
                  .order(created_at: :desc)
                  .page(params[:page])
                  .per(NUMBER_PER_PAGE)
