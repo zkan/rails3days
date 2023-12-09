@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Tealand";
+  src: url("Tealand/Tealand.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  color: red;
+  font-family: "Tealand";
+}
