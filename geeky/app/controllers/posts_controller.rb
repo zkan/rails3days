@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  NUMBER_PER_PAGE = 1
+
   # GET /posts or /posts.json
   def index
     # @posts = Post.all
@@ -9,6 +11,8 @@ class PostsController < ApplicationController
     # ซึ่งก็จะ join มาให้เราแต่แรก
     @posts = Post.eager_load(:writer, :tags)
                  .order(created_at: :desc)
+                 .page(params[:page])
+                 .per(NUMBER_PER_PAGE)
   end
 
   # GET /posts/1 or /posts/1.json
