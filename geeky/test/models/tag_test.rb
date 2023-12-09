@@ -1,7 +1,11 @@
 require "test_helper"
 
 class TagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @one = tags(:one)
+  end
+
+  def test_has_many_posts
+    assert_equal 1, @one.posts.count
+  end
 end
