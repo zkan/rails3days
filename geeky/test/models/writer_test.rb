@@ -7,11 +7,11 @@ class WriterTest < ActiveSupport::TestCase
   end
 
   def test_count
-    assert_equal Writer.count, 2
+    assert_equal 2, Writer.count
   end
 
   def test_name
-    assert_equal @john.name, "John"
+    assert_equal "John", @john.name
   end
 
   def test_age
@@ -24,12 +24,12 @@ class WriterTest < ActiveSupport::TestCase
 
   def test_select_lists
     list = [[@john.name, @john.id], [@kan.name, @kan.id]].sort_by { |name, id| id }
-    assert_equal Writer.select_lists, list
+    assert_equal list, Writer.select_lists
   end
 
   def test_unique_name
     writer = Writer.new(name: "John", age: 21)
 
-    assert_equal writer.valid?, false
+    assert_equal false, writer.valid?
   end
 end

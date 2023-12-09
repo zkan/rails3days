@@ -7,19 +7,19 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def test_belongs_to
-    assert_equal @one.writer.id, @john.id
+    assert_equal @john.id, @one.writer.id
   end
 
   def test_count
-    assert_equal Post.count, 12
+    assert_equal 12, Post.count
   end
 
   def test_title
-    assert_equal @one.title, "My Post 1"
+    assert_equal "My Post 1", @one.title
   end
 
   def test_body
-    assert_equal @one.body, "My Text 123456789"
+    assert_equal "My Text 123456789", @one.body
   end
 
   def test_body_presence
@@ -28,8 +28,8 @@ class PostTest < ActiveSupport::TestCase
     valid = @one.valid?
     message = @one.errors.first.full_message
 
-    assert_equal valid, false
-    assert_equal message, "Body must have more than 10 characters"
+    assert_equal false, valid
+    assert_equal "Body must have more than 10 characters", message
   end
 
   def test_body_nil
@@ -38,7 +38,7 @@ class PostTest < ActiveSupport::TestCase
     valid = @one.valid?
     message = @one.errors.first.full_message
 
-    assert_equal valid, false
-    assert_equal message, "Body can't be blank"
+    assert_equal false, valid
+    assert_equal "Body can't be blank", message
   end
 end
