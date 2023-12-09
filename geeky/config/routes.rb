@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   # get "samples/show"
-  resources :samples, only: ["index"]
+  namespace :admin do
+    resources :samples, only: ["index"]
+  end
 end
