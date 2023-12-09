@@ -1,5 +1,5 @@
 module Admin
-  class SamplesController < ApplicationController
+  class SamplesController < ::AdminController
     def index
     end
   end
