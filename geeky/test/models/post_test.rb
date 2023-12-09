@@ -11,7 +11,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def test_count
-    assert_equal Post.count, 2
+    assert_equal Post.count, 12
   end
 
   def test_title

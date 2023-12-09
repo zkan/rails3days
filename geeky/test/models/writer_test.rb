@@ -15,11 +15,11 @@ class WriterTest < ActiveSupport::TestCase
   end
 
   def test_age
-    assert_equal @john.age, 18
+    assert_equal 18, @john.age
   end
 
   def test_has_many_posts
-    assert_equal @john.posts.count, 1
+    assert_equal 1, @john.posts.count
   end
 
   def test_select_lists

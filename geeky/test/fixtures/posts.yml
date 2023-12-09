@@ -9,3 +9,10 @@ two:
   title: My Post 2
   body: My Text 123456789
   writer: kan
+
+<% 10.times do |i| %>
+post_<%= i %>:
+  title: My Post <%= i %>
+  body: My Text 123456789
+  writer: kan
+<% end %>
