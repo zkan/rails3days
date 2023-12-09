@@ -2,10 +2,10 @@
 
 one:
   title: My Post 1
-  body: My Text
+  body: My Text 123456789
   writer: john
 
 two:
   title: My Post 2
-  body: My Text
+  body: My Text 123456789
   writer: kan
