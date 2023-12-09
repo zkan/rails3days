@@ -31,4 +31,8 @@ class Post < ApplicationRecord
       tags << tag
     end
   end
+
+  # Post.joins(:writer).where("writers.id" => 2)
+  # Post.joins(:writer).group("writers.id")
+  # Post.joins(:tags).group("tags.name")
 end
