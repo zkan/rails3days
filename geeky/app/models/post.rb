@@ -14,6 +14,12 @@ class Post < ApplicationRecord
 
   include ContentEditable
 
+  # before_initialize :assign_default_title
+
+  # def assign_default_title
+  #   self.title = "untitled"
+  # end
+
   def writer_name
     writer.name
   end
