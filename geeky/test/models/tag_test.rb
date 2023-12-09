@@ -10,8 +10,8 @@ class TagTest < ActiveSupport::TestCase
   end
 
   def test_tag_destroy
-    destroy = @one.destroy
+    @one.destroy
 
-    assert_equal @one, destroy
+    assert_equal false, @one.persisted?
   end
 end
