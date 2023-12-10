@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   # counter_cache column: :posts_count
   # usage:
   # reset_counter: Writer.reset_counters(id, :posts_count)
-  belongs_to :writer, counter_cache: true
+  belongs_to :writer, counter_cache: true, touch: true
   # ใส่ counter_cache จะได้คอลัมน์ใหม่ชื่อ posts_count แล้วต้องรัน migrate ด้วย เวลาที่ใช้ฟีเจอร์นี้
   # ถ้าอยากเปลี่ยนชื่อ column ให้ใช้แบบนี้
   # belongs_to :writer, counter_cache: :awesome_posts_count

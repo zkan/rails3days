@@ -28,11 +28,12 @@
     </thead>
     <tbody id="posts_tbody">
       <% @posts.each do |post| %>
-        <%= turbo_frame_tag "edit_post_#{post.id}" do %>
-          <%= render "posts/post_row", post: post %>
+        <% cache post do %>
+          <%= turbo_frame_tag "edit_post_#{post.id}" do %>
+            <%= render "posts/post_row", post: post %>
+          <% end %>
         <% end %>
       <% end %>
     </tbody>
   </table>
 </div>
-
