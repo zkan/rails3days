@@ -8,7 +8,9 @@
 
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<% cache @post do %>
+	<%= render @post %>
+<% end %>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
