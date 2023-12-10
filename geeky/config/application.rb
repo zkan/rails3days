@@ -24,7 +24,8 @@ module Geeky
     # config.time_zone = "Central Time (US & Canada)"
     config.time_zone = "Asia/Bangkok"
     # config.available_locales = [:th, :en]
-    config.i18n.default_locale = :th
+    # config.i18n.default_locale = :th
+    config.i18n.default_locale = :en
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.active_job.queue_adapter = :sidekiq
