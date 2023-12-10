@@ -20,6 +20,16 @@ class Post < ApplicationRecord
   #   self.title = "untitled"
   # end
 
+  after_create_commit :broadcast_prepend_to_posts
+  def broadcast_prepend_to_posts
+    broadcast_prepend_to(
+      "post_lists",
+      partial: "posts/post_row",
+      locals: { post: self },
+      target: "posts"
+    )
+  end
+
   def writer_name
     writer.name
   end
