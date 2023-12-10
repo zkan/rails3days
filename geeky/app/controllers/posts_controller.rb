@@ -49,6 +49,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        format.turbo_stream
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -63,6 +64,7 @@ class PostsController < ApplicationController
     @post.destroy!
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end

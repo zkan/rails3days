@@ -2,5 +2,5 @@
   <td><%= link_to post.title, post %></td>
   <td><%= post.body %></td>
   <td><%= post.created_at %></td>
-  <td><%= button_to "Destroy this post", post, method: :delete %></td>
+  <td><%= link_to "Edit", edit_post_path(post), data: {turbo_frame: "edit_post_#{post.id}"} %> | <%= button_to "Destroy this post", post, method: :delete, data: {turbo_confirm: "Are you sure?"} %></td>
 </tr>
