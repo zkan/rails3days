@@ -37,6 +37,8 @@ class Post < ApplicationRecord
   def tags_string
     tags.map(&:name)
         .join(", ")
+    # tags.pluck(:name)
+        # .join(", ")
   end
 
   # attr_accessor :tags_string -- เราจะไม่ใช้วิธีนี้ เพราะว่าเราต้องเอา string มา split ก่อน

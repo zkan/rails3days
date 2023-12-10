@@ -1,0 +1,4 @@
+th:
+  hello: "Hello world"
+  post:
+    title: ชื่อโพสต์

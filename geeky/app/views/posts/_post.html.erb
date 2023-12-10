@@ -1,4 +1,5 @@
 <div id="<%= dom_id post %>">
+  <h2><%= I18n.t("post.title") %></h2>
   <h2><%= post.title %></h2>
   <p class="timestamp">Created: <%= time_ago_in_words(post.created_at) %></p>
 
